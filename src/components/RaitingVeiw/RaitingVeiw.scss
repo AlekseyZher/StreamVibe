@@ -1,0 +1,19 @@
+.raiting-view {
+  --raitingViewValue: 5;
+
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+
+  &__stars {
+    position: relative;
+
+    &-falled {
+      --clipEnd: calc(100% / 5 * var(--raitingViewValue));
+
+      @include abs-cover;
+
+      clip-path: polygon(0 0, var(--clipEnd) 0, var(--clipEnd) 100%, 0 100%);
+    }
+  }
+}
